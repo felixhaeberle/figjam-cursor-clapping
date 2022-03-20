@@ -1,3 +1,8 @@
+# Figjam Cursor Clapping
+
+![figjam-cursor-clapping-github](https://user-images.githubusercontent.com/34959078/159190305-f1514649-6059-4275-860b-d1dad6638be4.gif)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
