@@ -14,8 +14,11 @@ export default class Home extends Component {
   makeShot(particleRatio, opts) {
     this.animationInstance && this.animationInstance({
       ...opts,
-      origin: { y: 0.7 },
-      particleCount: Math.floor(200 * particleRatio),
+      origin: { y: 0.5 },
+      spread: 45,
+      startVelocity: 10,
+      scalar: 0.5,
+      particleCount: Math.floor(10 * particleRatio),
     });
   }
 
@@ -65,13 +68,13 @@ export default class Home extends Component {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className={styles.main}>
-          <div className="controls">
-            <button onClick={this.handlerFire}>Fire</button>
-          </div>
-          <ReactCanvasConfetti
+        <ReactCanvasConfetti
             refConfetti={this.getInstance}
             className="canvas"
           />
+          <div className="controls">
+            <button onClick={this.handlerFire}>Fire</button>
+          </div>
         </main>
       </div>
     )
