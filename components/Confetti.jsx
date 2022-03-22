@@ -1,5 +1,5 @@
-import ReactCanvasConfetti from 'react-canvas-confetti'
 import { Component } from 'react';
+import ReactCanvasConfetti from 'react-canvas-confetti'
 
 export default class Confetti extends Component {
   animationInstance = null;
@@ -9,6 +9,12 @@ export default class Confetti extends Component {
     this.fire = this.fire.bind(this);
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.clapping) {
+      this.fire()
+    }
+  }
+
   makeShot(particleRatio, opts) {
     this.animationInstance && this.animationInstance({
       ...opts,
@@ -16,37 +22,12 @@ export default class Confetti extends Component {
       spread: 45,
       startVelocity: 10,
       scalar: 0.5,
-      particleCount: Math.floor(10 * particleRatio),
+      particleCount: 1,
     });
   }
 
   fire() {
-    this.makeShot(0.25, {
-      spread: 26,
-      startVelocity: 55,
-    });
-
-    this.makeShot(0.2, {
-      spread: 60,
-    });
-
-    this.makeShot(0.35, {
-      spread: 100,
-      decay: 0.91,
-      scalar: 0.8,
-    });
-
-    this.makeShot(0.1, {
-      spread: 120,
-      startVelocity: 25,
-      decay: 0.92,
-      scalar: 1.2,
-    });
-
-    this.makeShot(0.1, {
-      spread: 120,
-      startVelocity: 45,
-    });
+    this.makeShot();
   }
 
   handlerFire = () => {
@@ -62,11 +43,11 @@ export default class Confetti extends Component {
       <>
         <ReactCanvasConfetti
           refConfetti={this.getInstance}
+          style={{position: "fixed", top: (this.props.position.y - 200) + 'px', left: (this.props.position.x - 500) + 'px', }}
           className="canvas"
+          width="1000"
+          height="300"
         />
-        <div className="controls">
-          <button onClick={this.handlerFire}>Fire</button>
-        </div>
       </>
     )
   }

@@ -1,0 +1,48 @@
+.hand {
+  animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+.handLeft {
+  margin-inline-end: -5px;
+  transform: rotateX(20deg)
+}
+
+.handRight {
+  margin-inline-start: -5px;
+  transform: rotateX(-20deg)
+}
+
+@keyframes myAnim {
+  0% {
+    animation-timing-function: ease-out;
+    transform: scale(1.2);
+    transform-origin: center center;
+    opacity: 0
+    
+  }
+
+  10% {
+    animation-timing-function: ease-in;
+    transform: scale(0.91);
+    opacity: 0.25
+
+  }
+
+  17% {
+    animation-timing-function: ease-out;
+    transform: scale(0.98);
+    opacity: 0.5
+  }
+
+  33% {
+    animation-timing-function: ease-in;
+    transform: scale(0.75);
+    opacity: 0.75
+  }
+
+  45% {
+    animation-timing-function: ease-out;
+    transform: scale(1.2);
+    opacity: 1
+  }
+}
