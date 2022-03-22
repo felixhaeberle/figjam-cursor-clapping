@@ -30,7 +30,6 @@ export default function Home() {
             setMousePosition(generateRandomMousePosition())
           }, 2000)
         }
-        //setMousePosition(mousePosition)
       }
     }
     
