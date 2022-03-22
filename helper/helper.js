@@ -5,5 +5,5 @@ const getWindowSize = () => {
 }
 
 export const generateRandomMousePosition = () => {
-  return {x: getRandomInRange(0, getWindowSize().x), y: getRandomInRange(0, getWindowSize().y)};
+  return {x: getRandomInRange(50, getWindowSize().x -50), y: getRandomInRange(50, getWindowSize().y -50)};
 }
